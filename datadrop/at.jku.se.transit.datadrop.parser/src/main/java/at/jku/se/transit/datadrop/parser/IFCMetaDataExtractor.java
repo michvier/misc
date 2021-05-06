@@ -16,6 +16,7 @@ public class IFCMetaDataExtractor implements IArtifactMetaDataProcessor {
 	 */
 	static final String REGEX = "DATA_DROP\\(([^\\)]+)\\);";
 	static final Pattern PATTERN = Pattern.compile(REGEX, Pattern.MULTILINE);
+	private static final String ID = "IFC_DataDrop";
 
 	@Override
 	public Map<String, String> getMetaData(String inputfile, List<String> mandatoryKeys) throws DataProcessorException {
@@ -82,6 +83,11 @@ public class IFCMetaDataExtractor implements IArtifactMetaDataProcessor {
 	@Override
 	public Map<String, String> getMetaData(String inputfile) throws DataProcessorException {
 		return getMetaData(inputfile, null);
+	}
+
+	@Override
+	public String getID() {
+		return ID;
 	}
 
 }

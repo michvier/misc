@@ -31,5 +31,11 @@ public interface IArtifactMetaDataProcessor {
 	 * @throws DataProcessorException when parsing fails or a key is missing
 	 */
 	public Map<String, String> getMetaData(String inputfile, List<String> mandatoryKeys) throws DataProcessorException;
+	
+	/**
+	 * 
+	 * @return The ID of the processor
+	 */
+	public String getID();
 
 }
